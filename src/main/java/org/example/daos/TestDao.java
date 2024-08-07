@@ -18,6 +18,7 @@ public class TestDao {
                     "SHOW DATABASES;");
 
             while (resultSet.next()) {
+                System.out.println(resultSet.getString("Database"));
                 databases.add(resultSet.getString("Database"));
             }
         }
