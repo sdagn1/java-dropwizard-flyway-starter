@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestDao {
+
+    /**
+     * Test connection method.
+     * @return Returns result
+     * @throws SQLException
+     */
     public List<String> testConnection() throws SQLException {
         List<String> databases = new ArrayList<>();
 

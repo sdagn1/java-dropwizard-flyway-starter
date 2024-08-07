@@ -10,13 +10,30 @@ import org.example.daos.TestDao;
 import org.example.services.TestService;
 
 public class TestApplication extends Application<TestConfiguration> {
+
+    /**
+     * Initialisation that runs the Test Application.
+     *
+     * @param args
+     * @throws Exception
+     */
     public static void main(final String[] args) throws Exception {
         new TestApplication().run(args);
     }
+
+    /**
+     * Retrieves Name.
+     * @return Test
+     */
     @Override
     public String getName() {
         return "Test";
     }
+
+    /**
+     * Initialization of the application.
+     * @param bootstrap
+     */
     @Override
     public void initialize(final Bootstrap<TestConfiguration> bootstrap) {
         bootstrap.addBundle(new SwaggerBundle<>() {
@@ -27,6 +44,12 @@ public class TestApplication extends Application<TestConfiguration> {
             }
         });
     }
+
+    /**
+     * Running the environment.
+     * @param configuration
+     * @param environment
+     */
     @Override
     public void run(final TestConfiguration configuration,
                     final Environment environment) {
