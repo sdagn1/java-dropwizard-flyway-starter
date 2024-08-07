@@ -14,13 +14,16 @@ public class TestDao {
         try (Connection connection = DatabaseConnector.getConnection()) {
             Statement statement = connection.createStatement();
 
+
             ResultSet resultSet = statement.executeQuery(
                     "SHOW DATABASES;");
+
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("Database"));
                 databases.add(resultSet.getString("Database"));
             }
+            System.out.println("Finished Retrieving Database names");
         }
 
         return databases;
